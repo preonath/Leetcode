@@ -35,3 +35,31 @@ print(s)
 print(is_balanced(s))
 
 
+### LAst time Solution ###
+
+def isValid(s):
+        if len(s) % 2 != 0:
+            return False
+        dict = {'(' : ')', '[' : ']', '{' : '}'}
+        print(f"Dictionary key {dict.keys()}")
+        stack = []
+        for i in s:
+            print(f"String: {i}")
+            
+            if i in dict.keys():
+                print(f"Keying {i}")
+                stack.append(i)
+            else:
+                if stack == []:
+                    return False
+                a = stack.pop()
+                print(f"Poping {a}")
+                print(f"Dictionary Poping {dict[a]}")
+                # if i!= dict[a]:
+                    
+#                     return False
+#         return True
+s='(){}'
+isValid(s)
+            
+dict = {'(' : ')', '[' : ']', '{' : '}'}
