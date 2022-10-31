@@ -1,4 +1,4 @@
-def longestCommonPrefix(self, strs: List[str]) -> str:
+def longestCommonPrefix(strs):
     if not strs:
         return ""
     shortest_str = min(strs, key=len)
