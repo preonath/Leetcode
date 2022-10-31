@@ -1,4 +1,4 @@
-#### Solution 1 ###
+#### Solution 1  Bruth Force approch ###
 
 def maxProfit(prices):
     
@@ -20,6 +20,7 @@ def maxProfit(prices):
 prices = [7,1,5,6,4,3]
 maxProfit(prices)
 
+## Solution Dynamic Programming ####
 
 #### Solution 2 ###
 
@@ -38,5 +39,29 @@ def maxProfit(prices):
         sell_position +=1
     return(maximum_profit)
 
+prices = [7,1,5,3,6,4]
+maxProfit(prices)
+
+
+#### Solution 3 ###
+
+
+def maxProfit(prices):
+    
+    minimum_value= min(prices[1:])
+    minimum_value_position = prices.index(minimum_value)
+
+    stoke_value=[]
+    
+    for i in prices[minimum_value_position: ]:
+        for j in prices[minimum_value_position+1: ]:
+            stoke_value.append(j-minimum_value)
+        break
+    if(len(stoke_value) == 0):
+        print(0)
+    else:
+        print(max(stoke_value))
+
+# prices = [7,3,3,3,3]
 prices = [7,1,5,3,6,4]
 maxProfit(prices)
